@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 
 class ListItems extends Component{
-
-  const items = this.props.items;
-  const list = items.map((item, idx) =>
-    <li key={idx.toString())}>
+  constructor(props){
+    super(props);
+    const items = this.props.items;
+    const list = items.map((item, idx) => {
+      <li key={idx.toString()}>
       <input name="selectedItems" type="checkbox">{item}</input>
-    </li>
-  );
+      </li>
+    });
+  }
 
   render(){
     return (
       <ul>
-        {list}
+        {this.list}
       </ul>
     );
   }
 }
 
-export Default ListItems;
+export default ListItems;
