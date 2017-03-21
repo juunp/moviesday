@@ -4,6 +4,9 @@ var request = require('request');
 var cheerio = require('cheerio');
 var CronJob = require('cron').CronJob;
 var app = express();
+
+app.set('port', (process.env.PORT || 5000));
+
 var dir = 'mov';
 var job = new CronJob('0 5 0 * * *', function(){
   scrape('http://www.allocine.fr/seance/salle_gen_csalle=P0087.html', dir);
@@ -76,6 +79,8 @@ app.use(express.static('build'));
 //   eraseFiles('mov');
 // });
 
-app.listen('8081');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
 exports = module.exports = app;
