@@ -9,13 +9,13 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.81.0",
-    "nodemon": "^1.11.0",
     "react-scripts": "0.9.5"
   },
   "devDependencies": {
+    "nodemon": "^1.11.0",
   },
   "scripts": {
-    "start": "react-scripts build && nodemon ./server.js",
+    "start": "react-scripts build && node server.js",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
