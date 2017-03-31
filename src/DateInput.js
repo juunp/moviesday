@@ -8,6 +8,12 @@ class dateInput extends Component{
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount(){
+    if(typeof this.props.value === 'string' && this.props.value !== ''){
+      this.setState({value: this.props.value});
+    }
+  }
+
   handleChange(event){
     this.setState({value: event.target.value});
   }

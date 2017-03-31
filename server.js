@@ -8,10 +8,12 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 var dir = 'mov';
+//happens 5 minutes after midnight every day
 var job = new CronJob('0 5 0 * * *', function(){
   scrape('http://www.allocine.fr/seance/salle_gen_csalle=P0087.html', dir);
 }, function(){}, true, 'Europe/Paris');
 
+//happens once every week
 var secondJob = new CronJob('0 0 0 * * 0', function(){
   eraseFiles(dir);
 }, function(){}, true, 'Europe/Paris');
@@ -68,7 +70,9 @@ function eraseFiles(dir){
     }
   });
 }
-app.use(express.static('build'));
+
+app.use('/mov', express.static(__dirname + '/mov'));
+app.use(express.static(__dirname + '/build'));
 
 // app.get('/scrape', function(req, res){
 //   var url = 'http://www.allocine.fr/seance/salle_gen_csalle=P0087.html';
@@ -76,7 +80,7 @@ app.use(express.static('build'));
 // });
 //
 // app.get('/files', function(req, res){
-//   eraseFiles('mov');
+//   eraseFiles(dir);
 // });
 
 app.listen(app.get('port'), function() {
