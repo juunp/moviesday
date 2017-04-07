@@ -18,6 +18,15 @@
   font-size: large;
 }
 
+li.selected{
+  background-color: #eee;
+}
+
+/*.switch input{
+  position: absolute;
+  opacity: 0;
+}*/
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

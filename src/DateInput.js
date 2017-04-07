@@ -1,26 +1,9 @@
 import React, { Component } from 'react';
 
 class dateInput extends Component{
-  constructor(props){
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  componentDidMount(){
-    if(typeof this.props.value === 'string' && this.props.value !== ''){
-      this.setState({value: this.props.value});
-    }
-  }
-
-  handleChange(event){
-    this.setState({value: event.target.value});
-  }
-
   render(){
     return (
-      <input type="date" value={this.state.value} onChange={this.handleChange}/>
+      <input type="date" value={this.props.value} onChange={this.props.handleChange}/>
     );
   }
 }

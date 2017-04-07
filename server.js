@@ -8,7 +8,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 var dir = 'mov';
-//happens 5 minutes after midnight every day
+// happens 5 minutes after midnight every day
 var job = new CronJob('0 5 0 * * *', function(){
   scrape('http://www.allocine.fr/seance/salle_gen_csalle=P0087.html', dir);
 }, function(){}, true, 'Europe/Paris');
