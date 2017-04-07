@@ -6,7 +6,7 @@ class ListMovies extends Component{
 
   render(){
     this.list = this.props.movies.map((item) =>
-    <li key={item.id.toString()}>
+    <li key={item.id.toString()} className={item.selected}>
       <img src={item.poster} alt={item.title}/>
       <CheckboxInputLabel id={item.id.toString()} value={item.selected} label={item.title} handleChange={this.props.handleChange}/>
     </li>
