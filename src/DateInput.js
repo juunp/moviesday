@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class dateInput extends Component{
+class DateInput extends Component{
   render(){
     return (
       <input type="date" value={this.props.value} onChange={this.props.handleChange}/>
@@ -8,4 +8,4 @@ class dateInput extends Component{
   }
 }
 
-export default dateInput;
+export default DateInput;
