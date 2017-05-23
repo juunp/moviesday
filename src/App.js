@@ -275,7 +275,7 @@ class App extends Component {
     let propList = [];
     for (let i = 0; i < l.length; i++){
       if(l[i][prop] === undefined){
-        throw "property does not exist";
+        throw new Error("property does not exist");
       }
       propList[propList.length] = l[i][prop];
     }
