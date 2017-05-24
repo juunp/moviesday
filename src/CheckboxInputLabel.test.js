@@ -8,7 +8,9 @@ describe('CheckboxInputLabel', () => {
     shallow(<CheckboxInputLabel />);
   });
 
-  it('contains input', () => {
-
+  it('contains label & input', () => {
+    let cb = shallow(<CheckboxInputLabel />);
+    expect(cb.find('label').length).toEqual(1);
+    expect(cb.find('input').length).toEqual(1);
   })
 });
