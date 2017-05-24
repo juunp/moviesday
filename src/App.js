@@ -18,8 +18,7 @@ class App extends Component {
       result: {
         start: null,
         end: null,
-        order: [],
-        orderedTt: []
+        order: []
       }
     };
 
