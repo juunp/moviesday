@@ -21,6 +21,8 @@ class App extends Component {
         order: []
       }
     };
+    
+    this.version = 0.1;
 
     this.selectDate = this.selectDate.bind(this);
     this.getMovies = this.getMovies.bind(this);
